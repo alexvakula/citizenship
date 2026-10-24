@@ -5,6 +5,7 @@ import { history } from './history'
 import { government, justice } from './government'
 import { symbols } from './symbols'
 import { geography, economy } from './geography'
+import { oath } from './oath'
 
 export const TOPICS: Record<string, string> = {
   rights: 'Rights & responsibilities',
@@ -15,6 +16,7 @@ export const TOPICS: Record<string, string> = {
   symbols: 'Symbols & honours',
   geography: 'Regions & geography',
   economy: 'Economy',
+  oath: 'Oath & anthem',
 }
 
 export const BANK = [
@@ -26,4 +28,5 @@ export const BANK = [
   ...toQuestions('symbols', symbols),
   ...toQuestions('geography', geography),
   ...toQuestions('economy', economy),
+  ...toQuestions('oath', oath),
 ]

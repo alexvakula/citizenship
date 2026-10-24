@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { BANK, TOPICS } from './data/questions'
+import { TEXTS } from './data/oath'
 import { EXAM_SECONDS, PASS_MARK, pickQuestions, score, secondsLeft, type Question, type Result } from './lib/exam'
 import { addAttempt, getHistory, getSession, saveSession, type Session } from './lib/store'
 
-type Screen = 'home' | 'exam' | 'results' | 'practice' | 'progress'
+type Screen = 'home' | 'exam' | 'results' | 'practice' | 'progress' | 'study'
 const mmss = (s: number) => `${Math.floor(s / 60)}:${String(s % 60).padStart(2, '0')}`
 
 export default function App() {
@@ -28,6 +29,7 @@ export default function App() {
       {screen === 'exam' && session && <Exam init={session} onFinish={finish} />}
       {screen === 'results' && done && <Results {...done} onHome={() => setScreen('home')} />}
       {screen === 'practice' && <Practice onHome={() => setScreen('home')} />}
+      {screen === 'study' && <Study onHome={() => setScreen('home')} />}
       {screen === 'progress' && <Progress onHome={() => setScreen('home')} />}
     </main>
   )
@@ -41,6 +43,7 @@ function Home({ onExam, onResume, go }: { onExam: () => void; onResume?: () => v
       {onResume && <button className="primary" onClick={onResume}>Resume exam in progress</button>}
       <button className="primary" onClick={onExam}>Start exam</button>
       <button onClick={() => go('practice')}>Practice by topic</button>
+      <button onClick={() => go('study')}>Read: Oath &amp; anthem</button>
       <button onClick={() => go('progress')}>My progress</button>
     </section>
   )
@@ -153,6 +156,21 @@ function Progress({ onHome }: { onHome: () => void }) {
       {[...h].reverse().map(a => <p key={a.date}>{new Date(a.date).toLocaleString()} — {a.correct}/{a.total} {a.passed ? '✓ pass' : '✗ fail'}</p>)}
       {Object.keys(topics).length > 0 && <h2>Accuracy by topic</h2>}
       {Object.entries(topics).map(([k, v]) => <p key={k}>{TOPICS[k]}: {Math.round((100 * v.c) / v.t)}% ({v.c}/{v.t})</p>)}
+      <button className="primary" onClick={onHome}>Home</button>
+    </section>
+  )
+}
+
+function Study({ onHome }: { onHome: () => void }) {
+  return (
+    <section>
+      <h1>Oath &amp; anthem</h1>
+      {TEXTS.map(t => (
+        <article className="card" key={t.title}>
+          <h2>{t.title} <small>(p. {t.page})</small></h2>
+          <p style={{ whiteSpace: 'pre-line' }}>{t.body}</p>
+        </article>
+      ))}
       <button className="primary" onClick={onHome}>Home</button>
     </section>
   )
