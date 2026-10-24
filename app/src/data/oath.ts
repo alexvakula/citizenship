@@ -5,10 +5,10 @@ export const TEXTS: { title: string; page: number; body: string }[] = [
   { title: 'The Oath of Citizenship', page: 3, body: `I swear (or affirm)
 That I will be faithful
 And bear true allegiance
-To Her Majesty
-Queen Elizabeth the Second
-Queen of Canada
-Her Heirs and Successors
+To His Majesty
+King Charles the Third
+King of Canada
+His Heirs and Successors
 And that I will faithfully observe
 The laws of Canada
 Including the Constitution
@@ -18,13 +18,13 @@ First Nations, Inuit and Métis peoples
 And fulfil my duties
 As a Canadian citizen.
 
-(The guide names the Queen; the Sovereign named in the oath is whoever is the reigning Sovereign.)` },
+(Updated for the current Sovereign. The printed guide still names Queen Elizabeth the Second.)` },
   { title: 'Le serment de citoyenneté', page: 3, body: `Je jure (ou j'affirme solennellement)
 Que je serai fidèle
 Et porterai sincère allégeance
 À Sa Majesté
-La reine Elizabeth Deux
-Reine du Canada
+Le roi Charles Trois
+Roi du Canada
 À ses héritiers et successeurs
 Que j'observerai fidèlement
 Les lois du Canada
@@ -57,8 +57,8 @@ Protégera nos foyers et nos droits.` },
 
 export const oath: Raw[] = [
   ['Which words begin the Oath of Citizenship?', ['I swear (or affirm) that I will be faithful', 'I promise to defend Canada', 'I solemnly declare my loyalty', 'I pledge allegiance to the flag'], 0, 'The oath begins "I swear (or affirm) that I will be faithful and bear true allegiance..."', 3],
-  ['In the Oath, you bear true what?', ['Allegiance', 'Courage', 'Witness', 'Loyalty tax'], 0, '"...and bear true allegiance to Her Majesty Queen Elizabeth the Second, Queen of Canada, Her Heirs and Successors."', 3],
-  ['To whom do you swear allegiance in the Oath?', ["The Sovereign, Queen of Canada, and her heirs and successors", 'The Prime Minister', 'The Canadian flag', 'The Constitution'], 0, 'Loyalty is professed to a person who represents all Canadians.', 3],
+  ['In the Oath, you bear true what?', ['Allegiance', 'Courage', 'Witness', 'Loyalty tax'], 0, '"...and bear true allegiance to His Majesty King Charles the Third, King of Canada, His Heirs and Successors."', 3],
+  ['To whom do you swear allegiance in the Oath?', ['The Sovereign (King of Canada) and his heirs and successors', 'The Prime Minister', 'The Canadian flag', 'The Constitution'], 0, 'Loyalty is professed to a person who represents all Canadians.', 3],
   ['In the Oath you promise to faithfully observe what?', ['The laws of Canada', 'The orders of the Prime Minister', 'All religious customs', 'Military regulations'], 0, '"...faithfully observe the laws of Canada including the Constitution."', 3],
   ['The Oath says the Constitution recognizes and affirms the rights of which peoples?', ['First Nations, Inuit and Métis peoples', 'English and French peoples', 'All immigrants', 'Provincial governments'], 0, 'Aboriginal and treaty rights.', 3],
   ['What do you promise to fulfil at the end of the Oath?', ['My duties as a Canadian citizen', 'My military service', 'My tax return', 'My promise to vote'], 0, 'The last line: "And fulfil my duties as a Canadian citizen."', 3],
