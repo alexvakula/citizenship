@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Citizenship Test Simulator</string>
+    <string name="title_activity_main">Citizenship Test Simulator</string>
+    <string name="package_name">ca.citizen.simulator</string>
+    <string name="custom_url_scheme">ca.citizen.simulator</string>
+</resources>
